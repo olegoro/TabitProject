@@ -1,0 +1,4 @@
+<div *ngIf="toShowCities" class="containerCities">
+  <div (click)="showCityWeather(i)" class="city" *ngFor="let weather of weathers; let i = index">{{ weather.city }}
+  </div>
+</div>

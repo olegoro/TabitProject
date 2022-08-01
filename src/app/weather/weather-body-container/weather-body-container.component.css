@@ -1,0 +1,54 @@
+.containerBody {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.bodyCurrentTempContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.weatherPhenomena {
+  font-size: 50px;
+}
+
+.fas {
+  font-size: 40px;
+}
+
+.currentTemp {
+  font-size: 200px;
+  position: relative;
+}
+
+.currentTempCelsiusSign {
+  font-size: 80px;
+  padding-bottom: 300px;
+  position: absolute;
+  top: 30px;
+}
+
+.minMaxTemp {
+  display: flex;
+  flex-direction: column;
+  font-size: 40px;
+  padding-top: 100px;
+}
+
+.minMaxTemp__divLine {
+  width: 80px;
+  height: 2px;
+  background-color: hsla(0, 0%, 100%, 0.1);
+}
+
+@media (min-width: 980px) {
+  .containerBody {
+    width: 845px;
+  }
+}

@@ -1,0 +1,19 @@
+<div class="containerBody">
+  <div class="bodyCurrentTempContainer">
+    <div class="weatherPhenomena">
+      <i [ngClass]="clickedCityWeather.weatherPicture"></i>
+      {{ clickedCityWeather.weatherPhenomena }}
+    </div>
+    <div class="currentTemp">
+      {{ clickedCityWeather.temperature }}<span class="currentTempCelsiusSign">&deg;</span>
+    </div>
+  </div>
+  <div class="bodyCurrentTempContainer">
+    <div></div>
+    <div class="minMaxTemp">
+      <div>{{ clickedCityWeather.maxTemperature }}&#8451;</div>
+      <div class="minMaxTemp__divLine"></div>
+      <div>{{ clickedCityWeather.minTemperature }}&#8451;</div>
+    </div>
+  </div>
+</div>

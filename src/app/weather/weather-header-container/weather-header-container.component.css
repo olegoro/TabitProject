@@ -1,0 +1,36 @@
+.containerHeader {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerHamburger {
+  cursor: pointer;
+}
+
+.hamburger {
+  width: 35px;
+  height: 5px;
+  background-color: white;
+  margin: 6px 0;
+}
+
+.headerCityContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.headerCity {
+  font-size: 50px;
+}
+
+@media (min-width: 980px) {
+  .containerHeader {
+    width: 845px;
+  }
+}

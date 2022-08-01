@@ -1,0 +1,22 @@
+.containerFooter {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.myChart {
+  width: 900px;
+  height: 310px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+@media (max-width: 980px) {
+  .myChart {
+    width: 100%;
+  }
+}
