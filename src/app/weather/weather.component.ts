@@ -28,7 +28,7 @@ export class WeatherComponent implements OnInit {
   constructor(private weatherService: WeatherService) {}
 
   ngOnInit(): void {
-    this.graphValues = this.weatherService.graphValues;
+    // this.graphValues = this.weatherService.graphValues;
     this.weathers = this.weatherService.weathers;
     this.clickedCityWeather = this.weathers[0];
   }

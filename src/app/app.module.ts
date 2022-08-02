@@ -10,9 +10,10 @@ import { WeatherHeaderContainerComponent } from './weather/weather-header-contai
 import { WeatherCitiesContainerComponent } from './weather/weather-cities-container/weather-cities-container.component';
 import { WeatherBodyContainerComponent } from './weather/weather-body-container/weather-body-container.component';
 import { WeatherFooterContainerComponent } from './weather/weather-footer-container/weather-footer-container.component';
+import { WeatherHamburgerWindowComponent } from './weather/weather-hamburger-window/weather-hamburger-window.component';
 
 @NgModule({
-  declarations: [AppComponent, WeatherComponent, WeatherHeaderContainerComponent, WeatherCitiesContainerComponent, WeatherBodyContainerComponent, WeatherFooterContainerComponent],
+  declarations: [AppComponent, WeatherComponent, WeatherHeaderContainerComponent, WeatherCitiesContainerComponent, WeatherBodyContainerComponent, WeatherFooterContainerComponent, WeatherHamburgerWindowComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

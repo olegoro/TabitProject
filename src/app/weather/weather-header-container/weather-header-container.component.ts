@@ -16,7 +16,7 @@ export class WeatherHeaderContainerComponent implements OnInit {
   ngOnInit(): void {}
 
   showCities() {
-    this.toShowCities = !this.toShowCities;
-    this.weatherService.hamburgerValuesOpened.next(this.toShowCities);
+    // this.toShowCities = !this.toShowCities;
+    this.weatherService.hamburgerValuesOpened.next(true);
   }
 }

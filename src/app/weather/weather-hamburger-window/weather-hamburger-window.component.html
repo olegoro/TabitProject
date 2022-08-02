@@ -1,0 +1,5 @@
+<div *ngIf="toShowHamburgerValues" class="hamburgerWindow">
+  <div (click)="closeHamburgerWindow(i)" *ngFor="let weather of weathers;let i = index" class="hamburgerValue">
+    {{ weather.city }}
+  </div>
+</div>

@@ -12,32 +12,32 @@ type EChartsOption = echarts.EChartsOption;
 export class WeatherService {
   hamburgerValuesOpened = new Subject<boolean>();
 
-  graphValues: GraphValue[] = [
-    {
-      name: 'NOW',
-      value: 30,
-    },
-    {
-      name: '7AM',
-      value: 20,
-    },
-    {
-      name: '8AM',
-      value: 25,
-    },
-    {
-      name: '9AM',
-      value: 23,
-    },
-    {
-      name: '10AM',
-      value: 32,
-    },
-    {
-      name: '11AM',
-      value: 30,
-    },
-  ];
+  // graphValues: GraphValue[] = [
+  //   {
+  //     name: 'NOW',
+  //     value: 30,
+  //   },
+  //   {
+  //     name: '7AM',
+  //     value: 20,
+  //   },
+  //   {
+  //     name: '8AM',
+  //     value: 25,
+  //   },
+  //   {
+  //     name: '9AM',
+  //     value: 23,
+  //   },
+  //   {
+  //     name: '10AM',
+  //     value: 32,
+  //   },
+  //   {
+  //     name: '11AM',
+  //     value: 30,
+  //   },
+  // ];
 
   weathers: Weather[] = [
     {
@@ -74,43 +74,61 @@ export class WeatherService {
     },
   ];
 
-  chartOption: EChartsOption = {
-    xAxis: {
-      type: 'category',
-      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-    },
-    yAxis: {
-      type: 'value',
-    },
-    series: [
-      {
-        data: [820, 932, 901, 934, 1290, 1330, 1320],
-        type: 'line',
-      },
-    ],
-  };
+  constructor() {}
 
-  constructor() {
-    // type EChartsOption = echarts.EChartsOption;
-    // var chartDom = document.getElementById('myChart')!;
-    // var myChart = echarts.init(chartDom);
-    // var option: EChartsOption;
-    // option = {
-    //   xAxis: {
-    //     type: 'category',
-    //     data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-    //   },
-    //   yAxis: {
-    //     type: 'value',
-    //   },
-    //   series: [
-    //     {
-    //       data: [820, 932, 901, 934, 1290, 1330, 1320],
-    //       type: 'line',
-    //       smooth: true,
-    //     },
-    //   ],
-    // };
-    // option && myChart.setOption(option);
+  createChart() {
+    type EChartsOption = echarts.EChartsOption;
+
+    var chartDom = document.getElementById('myChart')!;
+    var myChart = echarts.init(chartDom);
+    var option: EChartsOption;
+
+    option = {
+      tooltip: {
+        trigger: 'axis',
+      },
+      grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true,
+      },
+      toolbox: {
+        feature: {
+          saveAsImage: {},
+        },
+      },
+      xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: ['NOW', '7am', '8am', '9am', '10am', '11am'],
+        axisLine: {
+          lineStyle: {
+            color: 'white',
+          },
+        },
+      },
+      yAxis: {
+        show: false,
+      },
+      series: [
+        {
+          name: 'Temperature',
+          type: 'line',
+          stack: 'Total',
+          data: [18, 18, 19, 21, 19, 18],
+          lineStyle: { type: 'dashed', width: 1, color: 'white' },
+          itemStyle: {
+            color: 'white',
+          },
+          label: {
+            show: true,
+            color: 'white',
+          },
+        },
+      ],
+    };
+
+    option && myChart.setOption(option);
   }
 }
