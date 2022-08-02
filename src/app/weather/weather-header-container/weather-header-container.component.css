@@ -11,6 +11,10 @@
   cursor: pointer;
 }
 
+.headerPlusSign {
+  font-size: 40px;
+}
+
 .hamburger {
   width: 35px;
   height: 5px;

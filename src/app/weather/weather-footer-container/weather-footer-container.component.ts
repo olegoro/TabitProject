@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { GraphValue } from '../graphValue';
+import * as echarts from 'echarts';
 
 @Component({
   selector: 'app-weather-footer-container',
@@ -7,20 +7,61 @@ import { GraphValue } from '../graphValue';
   styleUrls: ['./weather-footer-container.component.css'],
 })
 export class WeatherFooterContainerComponent implements OnInit {
-  @Input() graphValues: GraphValue[] = [];
-
-  colorScheme: any = {
-    domain: ['#704FC$', '#4B852C', '#B67A3D', '#5B6FC8', '#25706F', '#25706F'],
-  };
-  legend: boolean = false;
-  showXAxisLabel: boolean = false;
-  showYAxisLabel: boolean = false;
-  xAxis: boolean = true;
-  yAxis: boolean = false;
-  xAxisLabel: string = 'Products';
-  yAxisLabel: string = 'Sales';
-
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    type EChartsOption = echarts.EChartsOption;
+
+    var chartDom = document.getElementById('myChart')!;
+    var myChart = echarts.init(chartDom);
+    var option: EChartsOption;
+
+    option = {
+      tooltip: {
+        trigger: 'axis',
+      },
+      grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true,
+      },
+      toolbox: {
+        feature: {
+          saveAsImage: {},
+        },
+      },
+      xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: ['NOW', '7am', '8am', '9am', '10am', '11am'],
+        axisLine: {
+          lineStyle: {
+            color: 'white',
+          },
+        },
+      },
+      yAxis: {
+        show: false,
+      },
+      series: [
+        {
+          name: 'Temperature',
+          type: 'line',
+          stack: 'Total',
+          data: [18, 18, 19, 21, 19, 18],
+          lineStyle: { type: 'dashed', width: 1, color: 'white' },
+          itemStyle: {
+            color: 'white',
+          },
+          label: {
+            show: true,
+            color: 'white',
+          },
+        },
+      ],
+    };
+
+    option && myChart.setOption(option);
+  }
 }
