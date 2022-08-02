@@ -6,7 +6,7 @@ import {
   EventEmitter,
 } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { WeatherService } from 'src/app/weather.service';
+import { WeatherService } from 'src/app/weather/weather.service';
 import { Weather } from '../weather';
 
 @Component({

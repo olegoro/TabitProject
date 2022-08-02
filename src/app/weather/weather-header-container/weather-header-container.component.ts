@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { WeatherService } from 'src/app/weather.service';
+import { WeatherService } from 'src/app/weather/weather.service';
 import { Weather } from '../weather';
 
 @Component({
@@ -16,7 +16,6 @@ export class WeatherHeaderContainerComponent implements OnInit {
   ngOnInit(): void {}
 
   showCities() {
-    // this.toShowCities = !this.toShowCities;
     this.weatherService.hamburgerValuesOpened.next(true);
   }
 }

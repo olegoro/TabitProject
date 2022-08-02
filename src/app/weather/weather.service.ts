@@ -1,43 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-import { GraphValue } from './weather/graphValue';
-import { Weather } from './weather/weather';
+import { Weather } from './weather';
 import * as echarts from 'echarts';
-
-type EChartsOption = echarts.EChartsOption;
 
 @Injectable({
   providedIn: 'root',
 })
 export class WeatherService {
   hamburgerValuesOpened = new Subject<boolean>();
-
-  // graphValues: GraphValue[] = [
-  //   {
-  //     name: 'NOW',
-  //     value: 30,
-  //   },
-  //   {
-  //     name: '7AM',
-  //     value: 20,
-  //   },
-  //   {
-  //     name: '8AM',
-  //     value: 25,
-  //   },
-  //   {
-  //     name: '9AM',
-  //     value: 23,
-  //   },
-  //   {
-  //     name: '10AM',
-  //     value: 32,
-  //   },
-  //   {
-  //     name: '11AM',
-  //     value: 30,
-  //   },
-  // ];
 
   weathers: Weather[] = [
     {
@@ -130,5 +100,9 @@ export class WeatherService {
     };
 
     option && myChart.setOption(option);
+
+    window.onresize = function () {
+      myChart.resize();
+    };
   }
 }

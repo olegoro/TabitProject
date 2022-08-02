@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import * as echarts from 'echarts';
-import { WeatherService } from 'src/app/weather.service';
+import { WeatherService } from 'src/app/weather/weather.service';
 
 @Component({
   selector: 'app-weather-footer-container',
